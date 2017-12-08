@@ -22,6 +22,7 @@ public class Dragon
     public Dragon()
     {
         // initialise instance variables
+        //hi
         x = 250;
         y = 250;
         size = 1;

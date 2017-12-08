@@ -11,7 +11,7 @@ public class TestClass
    public static void main(String args[]){
        DrawingPanel panel = new DrawingPanel(1000,1000);
        
-       
+       //hi
        Graphics g = panel.getGraphics();
        Scanner scnr = new Scanner(System.in); 
        
