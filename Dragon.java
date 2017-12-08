@@ -61,7 +61,6 @@ public class Dragon
         //g.fillPolygon(new int[] {160, 155, 155}, new int[] {150, 150 ,140}, 3); 1
         g.fillPolygon(new int[] {x + con, x +(con / 2), x + (con / 2)}, new int[] {y, y ,y - con}, 3);
         //g.fillPolygon(new int[] {, ,}, new int[] {, ,}, 3);
-        boolean g.drawImage(Image clipartix.com/wp-content/uploads/2016/05/Lightning-bolt-bolt-clipart-7-lighting-bolt-french-bathroom.png, 100,100,ImageObserver null);
     }
     
     /**
