@@ -12,8 +12,6 @@ public class Dragon
     private int y;
     private int size;
     private Color c;
-    private int[] x1 = new int[3];
-    private int[] y1 = new int[3];
     private int con;
 
     /**
@@ -22,7 +20,6 @@ public class Dragon
     public Dragon()
     {
         // initialise instance variables
-        //hi
         x = 250;
         y = 250;
         size = 1;
@@ -48,6 +45,7 @@ public class Dragon
      */
     public void drawDragon(Graphics g)
     {
+        // anything with a 1 means that it works with size 1 only
         g.setColor(c);
         g.fillRect(x, y , size * 10, size * 10);
         g.fillRect(x + (size * 10), y + (size * 10), size * 20, size * 10);
@@ -61,7 +59,13 @@ public class Dragon
         g.fillPolygon(new int[] {x + con, x +(con / 2), x + con}, new int[] {y, y ,y - con}, 3);
         //g.fillPolygon(new int[] {160, 155, 155}, new int[] {150, 150 ,140}, 3); 1
         g.fillPolygon(new int[] {x + con, x +(con / 2), x + (con / 2)}, new int[] {y, y ,y - con}, 3);
-        //g.fillPolygon(new int[] {, ,}, new int[] {, ,}, 3);
+        //g.fillPolygon(new int[] {150, 150, 155}, new int[] {155, 152 , 152}, 3); 1
+        g.fillPolygon(new int[] {x, x, x + (con / 2)}, new int[] {y + (con / 2), y + (size * 2), y + (size * 2)}, 3);
+        //drawOval(int x, int y, int width, int height)
+        g.setColor(Color.red);
+        g.fillOval(x + 1, y + (size * 2) + 1, (size * 2) - 1, (size * 2) - 1);
+        g.setColor(Color.blue);
+        g.fillRect(x , y + (con / 2) + size, (con / 2), (con / 3) - 1);
     }
     
     /**
