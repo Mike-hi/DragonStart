@@ -13,6 +13,7 @@ public class Dragon
     private int size;
     private Color c;
     private int con;
+    private boolean addHealth;
 
     /**
      * Default Constructor for objects of class Dragon
@@ -66,6 +67,7 @@ public class Dragon
         g.fillOval(x + 1, y + (size * 2) + 1, (size * 2) - 1, (size * 2) - 1);
         g.setColor(Color.blue);
         g.fillRect(x , y + (con / 2) + size, (con / 2), (con / 3) - 1);
+        healthbar(g, con, x, y);
     }
     
     /**
@@ -77,5 +79,8 @@ public class Dragon
      */
     public String toString(){
         return "x coor: " + x + " y coord: " + y + " size: " + size;
+    }
+    public static void healthbar(Graphics g, int con, int x, int y){
+        g.drawRect(x - con ,y - 50 , con * 5, con/3);
     }
 }
