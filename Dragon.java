@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.Scanner;
 /**
  * Write a description of class Dragon here.
  *
@@ -13,6 +14,7 @@ public class Dragon
     private int size;
     private Color c;
     private int con;
+    private String n;
 
     /**
      * Default Constructor for objects of class Dragon
@@ -28,11 +30,12 @@ public class Dragon
     /**
      * Overloaded Constructors go here
      */
-    public Dragon(Graphics g, int x1, int y1, int s, Color c){
+    public Dragon(Graphics g, int x1, int y1, int s, Color c, String name){
         x = x1;
         y = y1;
         size = s;
         con = size * 10;
+        n = name;
         g.setColor(c);
     }
 
@@ -66,6 +69,7 @@ public class Dragon
         g.fillOval(x + 1, y + (size * 2) + 1, (size * 2) - 1, (size * 2) - 1);
         g.setColor(Color.blue);
         g.fillRect(x , y + (con / 2) + size, (con / 2), (con / 3) - 1);
+        nameDragon(g, n, con, x, y);
     }
     
     /**
@@ -77,5 +81,10 @@ public class Dragon
      */
     public String toString(){
         return "x coor: " + x + " y coord: " + y + " size: " + size;
+    }
+    public static void nameDragon(Graphics g, String n, int con, int x, int y){
+        g.setColor(Color.red);
+        g.setFont(new Font("SERIF", Font.BOLD, 16));
+        g.drawString(n , x + con, y - (con * 3));
     }
 }
