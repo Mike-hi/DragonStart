@@ -15,16 +15,17 @@ public class TestClass
        Graphics g = panel.getGraphics();
        Scanner scnr = new Scanner(System.in); 
        
+       System.out.println("please enter a name for you're Dragon");
+       String name = scnr.nextLine();
        System.out.println("x?");
        int x = scnr.nextInt();
        System.out.println("y?");
        int y = scnr.nextInt();
        System.out.println("size?");
        int size = scnr.nextInt();
-       System.out.println("Please enter in all caps");
        Color color = Color.RED;
        
-       Dragon jen = new Dragon(g ,x, y, size, color);
+       Dragon jen = new Dragon(g ,x, y, size, color, name);
        
        jen.drawDragon(g);
      
