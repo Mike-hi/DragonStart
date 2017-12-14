@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.util.Scanner;
+import java.lang.Math;
 /**
  * Write a description of class Dragon here.
  *
@@ -15,6 +16,8 @@ public class Dragon
     private Color c;
     private int con;
     private String n;
+    private int heal;
+    private String speak;
 
     /**
      * Default Constructor for objects of class Dragon
@@ -30,12 +33,14 @@ public class Dragon
     /**
      * Overloaded Constructors go here
      */
-    public Dragon(Graphics g, int x1, int y1, int s, Color c, String name){
+    public Dragon(Graphics g, int x1, int y1, int s, Color c, String name, double health, String say){
         x = x1;
         y = y1;
         size = s;
         con = size * 10;
         n = name;
+        speak = say;
+        heal = (int)((health / 100) * ((double)(con * 5)));
         g.setColor(c);
     }
 
@@ -70,7 +75,7 @@ public class Dragon
         g.setColor(Color.blue);
         g.fillRect(x , y + (con / 2) + size, (con / 2), (con / 3) - 1);
         nameDragon(g, n, con, x, y);
-        healthBar(g, con, x , y);
+        health(g, con, x, y, size, heal);
     }
     
     /**
@@ -88,8 +93,13 @@ public class Dragon
         g.setFont(new Font("SERIF", Font.BOLD, 16));
         g.drawString(n , x + con, y - (con * 3));
     }
-    public static void healthBar(Graphics g, int con, int x, int y){
-        g.setColor(Color.black);
-        g.drawRect(x - (con), y - (con * 2), con * 5, con / 3);
+    public static void health(Graphics g, int con, int x, int y, int size, int heal){
+        g.setColor(Color.RED);
+        g.fillRect(x  - con , y - (con * 2) , heal, con / 3);
+        g.setColor(Color.BLACK);
+        g.drawRect(x  - con , y - (con * 2) , con * 5, con / 3);
+    }
+    public static void talk(){
+        
     }
 }
