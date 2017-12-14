@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.util.Scanner;
+import java.lang.Math;
 /**
  * Write a description of class TestClass here.
  *
@@ -24,8 +25,10 @@ public class TestClass
        System.out.println("size?");
        int size = scnr.nextInt();
        Color color = Color.RED;
+       System.out.println("please type  in the percent of health you're dragon has");
+       double health = scnr.nextDouble();
        
-       Dragon jen = new Dragon(g ,x, y, size, color, name);
+       Dragon jen = new Dragon(g ,x, y, size, color, name, health);
        
        jen.drawDragon(g);
      
