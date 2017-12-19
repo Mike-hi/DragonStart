@@ -30,7 +30,9 @@ public class TestClass
        String say = scnr.nextLine();
        
        Dragon jen = new Dragon(g ,x, y, size, color, name, health, say);
+       Background wall = new Background(g, x, y, size);
        
+       wall.drawBackground(g);
        jen.drawDragon(g);
      
        System.out.println(jen);
