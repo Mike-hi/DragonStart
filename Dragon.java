@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.ArrayList;
 /**
  * Write a description of class Dragon here.
  *
@@ -18,6 +19,7 @@ public class Dragon
     private String n;
     private int heal;
     private String speak;
+    private int numDrag;
 
     /**
      * Default Constructor for objects of class Dragon
@@ -42,6 +44,7 @@ public class Dragon
         speak = say;
         heal = (int)((health / 100) * ((double)(con * 5)));
         g.setColor(c);
+        this.numDrag = numDrag;
     }
 
     /** 
@@ -76,6 +79,12 @@ public class Dragon
         g.fillRect(x , y + (con / 2) + size, (con / 2), (con / 3) - 1);
         nameDragon(g, n, con, x, y);
         health(g, con, x, y, size, heal);
+    }
+    public void drawDragon(Graphics g, int numDrag){
+        numDrag = Math.abs(numDrag);
+        for(int i = 0; i <= numDrag ; i++){
+            
+        }
     }
     
     /**

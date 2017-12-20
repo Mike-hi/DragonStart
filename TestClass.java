@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.ArrayList;
 /**
  * Write a description of class TestClass here.
  *
@@ -28,12 +29,14 @@ public class TestClass
        System.out.println("please type  in the percent of health you're dragon has");
        double health = scnr.nextDouble();
        String say = scnr.nextLine();
+       System.out.println("How many dragons would you like? you may enter nothing if you only want one.");
+       int numDrag = scnr.nextInt();
        
        Dragon jen = new Dragon(g ,x, y, size, color, name, health, say);
        Background wall = new Background(g, x, y, size);
        
        wall.drawBackground(g);
-       jen.drawDragon(g);
+       jen.drawDragon(g, numDrag);
      
        System.out.println(jen);
     }

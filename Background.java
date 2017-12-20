@@ -36,8 +36,8 @@ public class Background
     
     public void drawBackground(Graphics g){
         g.setColor(Color.red);
-        for(int i = 0 ; i <= (x / 2) / 5; i++){
-            g.drawRect(0 + (i * (con / 4)) , y, con / 4, con / 4);
+        for(int i = 0 ; i <= (x / 4) / 5; i++){
+            g.drawRect(0 + (i * (con / 4)) , y + (con * 3), con / 4, con / 4);
         }
     }
 
