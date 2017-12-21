@@ -31,12 +31,14 @@ public class TestClass
        String say = scnr.nextLine();
        System.out.println("How many dragons would you like? you may enter nothing if you only want one.");
        int numDrag = scnr.nextInt();
+       ArrayList <Dragon> drag = new ArrayList <Dragon>();
+       
        
        Dragon jen = new Dragon(g ,x, y, size, color, name, health, say);
        Background wall = new Background(g, x, y, size);
        
        wall.drawBackground(g);
-       jen.drawDragon(g, numDrag);
+       jen.drawDragon(g, numDrag, drag);
      
        System.out.println(jen);
     }
