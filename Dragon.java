@@ -44,7 +44,6 @@ public class Dragon
         speak = say;
         heal = (int)((health / 100) * ((double)(con * 5)));
         g.setColor(c);
-        Color g.setColor(c);
         this.numDrag = numDrag;
     }
 
@@ -80,14 +79,6 @@ public class Dragon
         g.fillRect(x , y + (con / 2) + size, (con / 2), (con / 3) - 1);
         nameDragon(g, n, con, x, y);
         health(g, con, x, y, size, heal);
-    }
-    public void drawDragon(Graphics g, int numDrag, ArrayList drag){
-        numDrag = Math.abs(numDrag);
-        Dragon jen = new Dragon();
-        for(int i = 0 ; i < numDrag ; i++){
-            jen = new Dragon(g ,x, y, size, g, name, health, say);
-            drag.add(jen);
-        }
     }
     
     /**

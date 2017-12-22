@@ -37,8 +37,19 @@ public class TestClass
        Dragon jen = new Dragon(g ,x, y, size, color, name, health, say);
        Background wall = new Background(g, x, y, size);
        
+       numDrag = Math.abs(numDrag);
+        for(int i = 1 ; i <= numDrag ; i++){
+            jen = new Dragon(g ,x + (((size*50) * i) * 3), y, size, Color.red, name, health, say);
+            drag.add(jen);
+            drag.get(i - 1).drawDragon(g);
+        }
+        /*
+        for(int i = 0 ; i < numDrag ; i++){
+            drag.get(i ).drawDragon(g);
+        }
+        */
        wall.drawBackground(g);
-       jen.drawDragon(g, numDrag, drag);
+       jen.drawDragon(g);
      
        System.out.println(jen);
     }
