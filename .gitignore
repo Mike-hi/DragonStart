@@ -23,3 +23,5 @@ hs_err_pid*
 *.ctxt
 *.ctxt
 *.class
+package.bluej
+*.bluej
