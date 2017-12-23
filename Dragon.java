@@ -2,6 +2,7 @@ import java.awt.*;
 import java.util.Scanner;
 import java.lang.Math;
 import java.util.ArrayList;
+import java.awt.FontMetrics;
 /**
  * Write a description of class Dragon here.
  *
@@ -20,6 +21,7 @@ public class Dragon
     private int heal;
     private String speak;
     private int numDrag;
+    private int StrLng;
 
     /**
      * Default Constructor for objects of class Dragon
@@ -92,9 +94,14 @@ public class Dragon
         return "x coor: " + x + " y coord: " + y + " size: " + size;
     }
     public static void nameDragon(Graphics g, String n, int con, int x, int y){
+        FontMetrics metrics = g.getFontMetrics(new Font("SERIF", Font.BOLD, 16));
+        int f;
+        int StrLng = metrics.stringWidth(n);
         g.setColor(Color.red);
         g.setFont(new Font("SERIF", Font.BOLD, 16));
-        g.drawString(n , x + con, y - (con * 3));
+        f = (con * 3) - StrLng;
+        f = f / 2;
+        g.drawString(n , x + f, y - (con * 3));
     }
     public static void health(Graphics g, int con, int x, int y, int size, int heal){
         g.setColor(Color.RED);

@@ -2,6 +2,7 @@ import java.awt.*;
 import java.util.Scanner;
 import java.lang.Math;
 import java.util.ArrayList;
+import java.awt.FontMetrics;
 /**
  * Write a description of class TestClass here.
  *
@@ -38,10 +39,10 @@ public class TestClass
        Background wall = new Background(g, x, y, size);
        
        numDrag = Math.abs(numDrag);
-        for(int i = 1 ; i <= numDrag ; i++){
-            jen = new Dragon(g ,x + (((size*50) * i) * 3), y, size, Color.red, name, health, say);
+        for(int i = 0 ; i < numDrag ; i++){
+            jen = new Dragon(g ,x + (((size * 20) * i) * 3), y, size, Color.red, name, health, say);
             drag.add(jen);
-            drag.get(i - 1).drawDragon(g);
+            drag.get(i).drawDragon(g);
         }
         /*
         for(int i = 0 ; i < numDrag ; i++){
