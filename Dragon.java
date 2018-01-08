@@ -15,7 +15,6 @@ public class Dragon
     private int x;
     private int y;
     private int size;
-    private Color c;
     private int con;
     private String n;
     private int heal;
@@ -37,7 +36,7 @@ public class Dragon
     /**
      * Overloaded Constructors go here
      */
-    public Dragon(Graphics g, int x1, int y1, int s, Color c, String name, double health, String say){
+    public Dragon(Graphics g, int x1, int y1, int s, String name, double health, String say){
         x = x1;
         y = y1;
         size = s;
@@ -45,7 +44,7 @@ public class Dragon
         n = name;
         speak = say;
         heal = (int)((health / 100) * ((double)(con * 5)));
-        g.setColor(c);
+        g.setColor(Color.red);
         this.numDrag = numDrag;
     }
 
@@ -59,7 +58,7 @@ public class Dragon
     public void drawDragon(Graphics g)
     {
         // anything with a 1 means that it works with size 1 only
-        g.setColor(c);
+        g.setColor(Color.red);
         g.fillRect(x, y , size * 10, size * 10);
         g.fillRect(x + (size * 10), y + (size * 10), size * 20, size * 10);
         g.fillRect(x + (size * 10), y + (size * 20), size * 5, size * 10);
@@ -103,7 +102,7 @@ public class Dragon
         f = f / 2;
         g.drawString(n , x + f, y - (con * 3));
     }
-    public static void health(Graphics g, int con, int x, int y, int size, int heal){
+    public void health(Graphics g, int con, int x, int y, int size, int heal){
         g.setColor(Color.RED);
         g.fillRect(x  - con , y - (con * 2) , heal, con / 3);
         g.setColor(Color.BLACK);

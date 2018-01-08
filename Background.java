@@ -1,19 +1,20 @@
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.net.URL;
+import java.lang.Math;
 /**
  * Write a description of class Background here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Background
-{
+ public class Background{
     // instance variables - replace the example below with your own
     private int x;
     private int y;
     private int size;
     private int con;
+    private int l;
     
     /**
      * Constructor for objects of class Background
@@ -32,13 +33,16 @@ public class Background
         this.y = y;
         this.size = size;
         con = size * 10;
+        l = Math.round(1000/28);
     }
     
     public void drawBackground(Graphics g){
-        g.setColor(Color.red);
-        for(int i = 0 ; i <= (x / 4) / 5; i++){
-            g.drawRect(0 + (i * (con / 4)) , y + (con * 3), con / 4, con / 4);
-        }
+        g.setColor(Color.black);
+        g.fillRect(0, 0, 1000, y + (con * size));
+        g.setColor(Color.gray);
+        g.fillRect(0, y + (con * size), 1000, 1000 - ( y + (con * size)));
+        g.setColor(Color.white);
+        g.fillOval(1000 - (con * size) / 4, 0 - (con * size) / 4, (con * size) / 2 ,  (con * size) / 2);
     }
 
     /**

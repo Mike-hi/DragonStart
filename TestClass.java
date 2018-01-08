@@ -35,23 +35,26 @@ public class TestClass
        ArrayList <Dragon> drag = new ArrayList <Dragon>();
        
        
-       Dragon jen = new Dragon(g ,x, y, size, color, name, health, say);
+       Dragon jen = new Dragon(g ,x, y, size, name, health, say);
        Background wall = new Background(g, x, y, size);
-       
-       numDrag = Math.abs(numDrag);
-        for(int i = 0 ; i < numDrag ; i++){
-            jen = new Dragon(g ,x + (((size * 20) * i) * 3), y, size, Color.red, name, health, say);
-            drag.add(jen);
-            drag.get(i).drawDragon(g);
-        }
+       SubTest s = new SubTest(g ,x, y, size, name, health, say);
         /*
         for(int i = 0 ; i < numDrag ; i++){
             drag.get(i ).drawDragon(g);
         }
         */
+       
+       numDrag = Math.abs(numDrag);
+        for(int i = 0 ; i < numDrag ; i++){
+            jen = new Dragon(g ,x + (((size * 20) * i) * 3), y, size, name, health, say);
+            drag.add(jen);
+            drag.get(i).drawDragon(g);
+        }
+        
        wall.drawBackground(g);
        jen.drawDragon(g);
-     
+       
+       s.nameDragon(g, "hello name", size * 10, x + 100, y);
        System.out.println(jen);
     }
 }
